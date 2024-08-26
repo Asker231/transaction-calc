@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 
@@ -17,7 +19,7 @@ import (
 				break
 			}
 		}
-		fmt.Println("Посчитать сумму? y/n")
+		color.Green("Посчитать сумму? y/n")
 		var question string
 		fmt.Scan(&question)
 		if question != "y"{
@@ -26,8 +28,9 @@ import (
 		sum:= SumTransaction(transactions)
 		for  range 5{
 			time.Sleep(1 * time.Second)
-			fmt.Print(" _ ")
+			color.Cyan(" _ ")
 		}
+		 
 		fmt.Println("Ваша сумма =",sum)
 	}
 
