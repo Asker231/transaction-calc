@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 
 	func main() {
@@ -14,6 +17,18 @@ import "fmt"
 				break
 			}
 		}
+		fmt.Println("Посчитать сумму? y/n")
+		var question string
+		fmt.Scan(&question)
+		if question != "y"{
+			return
+		}
+		sum:= SumTransaction(transactions)
+		for  range 5{
+			time.Sleep(1 * time.Second)
+			fmt.Print(" _ ")
+		}
+		fmt.Println("Ваша сумма =",sum)
 	}
 
 	func ScanTransaction()float64{
@@ -21,3 +36,13 @@ import "fmt"
 		fmt.Scan(&transaction)
 		return float64(transaction)
 	}
+
+	func SumTransaction(transaction []float64)float64{
+		var sum float64
+
+		for _,elem := range transaction{
+			sum += elem
+		}
+
+		return sum
+	} 
